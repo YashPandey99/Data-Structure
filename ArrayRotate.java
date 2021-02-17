@@ -1,7 +1,7 @@
 import java.util.*;
 public class ArrayRotate {
     public static void main(String[] args) {
-        int n,i,d,j,k;
+        int n,i,d,j;
     Scanner sc =  new Scanner(System.in);
     n =sc.nextInt();
     int arr[] = new int[n];
@@ -16,15 +16,24 @@ public class ArrayRotate {
         ary[j]= arr[j];
     } 
    
-    int temp,a;
-    temp = arr[0];
+    int a;
+    int f=d;
+    while(f>0){
     for (a = 0; a < n-1 ; a++){
         arr[a] = arr[a + 1];
-        arr[n-1] = temp; 
+        
      }
+        f--;
+        }
+        for(int p=0;p<n-d;p++){
+            arr[d+p]=ary[p];
+        }   
+
+
      for (a = 0; a < n ; a++){
         System.out.print(arr[a]);
      }
+    
     }
 }
     
